@@ -33,26 +33,31 @@ function checkPalindrome(date) {
 
 function clickHandler() {
   var date = dateinput.value;
-  var flag = 0;
-  // console.log(date);
-  var dateformats = generateDate(date);
-  // console.log(dateformats);
+  if (dateinput.value === "") {
+    output.innerHTML = "Please enter a date";
+  } else {
+    var flag = 0;
+    // console.log(date);
+    var dateformats = generateDate(date);
+    // console.log(dateformats);
 
-  //loop to check if any one format of date is palindrome using the checkPalindrome function
-  for (var i = 0; i < dateformats.length; i++) {
-    flag = checkPalindrome(dateformats[i]);
-    console.log(flag);
-    if (flag === 1) {
-      break;
+    //loop to check if any one format of date is palindrome using the checkPalindrome function
+    for (var i = 0; i < dateformats.length; i++) {
+      flag = checkPalindrome(dateformats[i]);
+      console.log(flag);
+      if (flag === 1) {
+        break;
+      }
     }
-  }
 
-  //Displaying appropiate result depending on the flag value. 1 is date is palindrome, 0 is it isn't
-  if (flag === 1) {
-    output.innerHTML =
-      "Congratulations Your birthday is a palindrome birthdate!!";
-  } else if (flag === 0) {
-    output.innerHTML = "Oops :( your birthdate is not an palidrome birthdate.";
+    //Displaying appropiate result depending on the flag value. 1 is date is palindrome, 0 is it isn't
+    if (flag === 1) {
+      output.innerHTML =
+        "Congratulations, Your birthdate is a palindrome birthdate!!";
+    } else if (flag === 0) {
+      output.innerHTML =
+        "Oops :( your birthdate is not an palidrome birthdate.";
+    }
   }
 }
 
