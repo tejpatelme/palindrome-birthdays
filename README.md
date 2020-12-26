@@ -1,2 +1,3 @@
-# palindrome-birthdays
-Created with CodeSandbox
+# Palindrome Birthdays
+
+Check if your bithdate is a palindrome birthdate.
